@@ -27,17 +27,17 @@
             @include("layouts.parts.service", [
                 "title" => "SEO Optimization",
                 "subtitle" => "Boost your search rankings and drive organic traffic with our expert SEO strategies.",
-                "icon" => "bi bi-search"
+                "icon" => "search"
             ])
             @include("layouts.parts.service", [
                 "title" => "Special Media Marketing",
                 "subtitle" => "Engage your audience and build brand awareness across all social platforms.",
-                "icon" => "bi bi-share"
+                "icon" => "share"
             ])
             @include("layouts.parts.service", [
                 "title" => "PPC Advertising",
                 "subtitle" => "Maximize ROI with targeted pay-per-click campaigns that convert.",
-                "icon" => "bi bi-graph-up"
+                "icon" => "graph-up"
             ])
         </div>
       </div>

@@ -2,7 +2,7 @@
     <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
                 <div class="services-icon">
-                  <i class="{{$icon}}"></i>
+                  <i class="bi bi-{{$icon}}"></i>
                 </div>
                 <h4>{{$title}}</h4>
                 <p>{{$subtitle}}</p>
