@@ -1,0 +1,679 @@
+/* Custom CSS for MarketPro Agency - BOLD & VIBRANT */
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
+
+/* CSS Variables */
+:root {
+  --primary-gradient: linear-gradient(135deg, #ff006e 0%, #8338ec 100%);
+  --secondary-gradient: linear-gradient(135deg, #06ffa5 0%, #00bbf9 100%);
+  --accent-color: #ffbe0b;
+  --dark-bg: #0a0e27;
+  --light-bg: #f8f9fa;
+  --text-dark: #1b1b1b;
+  --text-light: #ffffff;
+  --box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  padding-top: 80px;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Navigation - Bold & Modern */
+.navbar {
+  background: rgba(10, 14, 39, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Hero Section - ULTRA BOLD */
+.hero-section {
+  background: var(--dark-bg);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-gradient);
+  opacity: 0.8;
+  animation: gradient-shift 10s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-10%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(10%) translateY(10%);
+  }
+  75% {
+    transform: translateX(-10%) translateY(10%);
+  }
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  animation: slideInLeft 1s ease-out;
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  animation: slideInRight 1s ease-out 0.2s;
+  animation-fill-mode: both;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  animation: bounceIn 1s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  border: none;
+  color: var(--text-dark);
+  box-shadow: 0 10px 30px rgba(255, 190, 11, 0.4);
+}
+
+.btn-primary:hover {
+  background: #ffd60a;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 190, 11, 0.6);
+}
+
+.btn-outline-light {
+  border: 3px solid #fff;
+  background: transparent;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--text-dark);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Page Headers - Dynamic */
+.page-header {
+  background: var(--primary-gradient);
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  animation: slideInDown 0.8s ease-out;
+}
+
+.page-header p {
+  font-size: 1.3rem;
+  animation: fadeIn 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+
+/* Cards - Bold & Colorful */
+.card {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: #fff;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card i {
+  font-size: 3rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.card:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Services Section Icons */
+.services-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-gradient);
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 187, 249, 0.3);
+  transition: all 0.3s ease;
+}
+
+.services-icon i {
+  font-size: 2rem;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+
+.card:hover .services-icon {
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: 0 15px 40px rgba(0, 187, 249, 0.5);
+}
+
+/* About Page - Team Cards */
+.team-member {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-gradient);
+  opacity: 0.1;
+  transition: left 0.5s ease;
+}
+
+.team-member:hover::before {
+  left: 0;
+}
+
+.team-member img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  background: var(--primary-gradient);
+  background-clip: padding-box;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.1);
+  border-color: var(--accent-color);
+}
+
+/* Portfolio - Modern Grid */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(131, 56, 236, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 2rem;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Achievements - Animated Numbers */
+.achievement {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.achievement i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease infinite;
+}
+
+.achievement h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Contact Form - Modern Style */
+.form-control,
+.form-select {
+  border: none;
+  border-bottom: 3px solid #e0e0e0;
+  border-radius: 0;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent-color);
+  box-shadow: none;
+  background: rgba(255, 190, 11, 0.05);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+/* Footer - Clean & Bold */
+footer {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 3rem 0;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+footer a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+  transform: translateY(-5px) rotate(15deg);
+}
+
+/* Enhanced Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Floating Elements */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Badge Styles */
+.badge {
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
+}
+
+.badge.bg-primary {
+  background: var(--primary-gradient) !important;
+}
+
+.badge.bg-success {
+  background: var(--secondary-gradient) !important;
+}
+
+.badge.bg-warning {
+  background: var(--accent-color) !important;
+  color: var(--text-dark) !important;
+}
+
+/* CTA Sections */
+.bg-primary {
+  background: var(--primary-gradient) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-primary::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-gradient);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--accent-color);
+  color: var(--text-dark);
+}
+
+/* Hover Effects for Links */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Section Title Animations */
+section h2 {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: var(--accent-color);
+  border-radius: 50px;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading Animation */
+.loading {
+  animation: shimmer 2s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
